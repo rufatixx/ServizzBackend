@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/rufat/Projects/ServizzBackend/ServizzBackend/ServizzBackend.csproj": {}
+  },
+  "projects": {
+    "/Users/rufat/Projects/ServizzBackend/ServizzBackend/ServizzBackend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rufat/Projects/ServizzBackend/ServizzBackend/ServizzBackend.csproj",
+        "projectName": "ServizzBackend",
+        "projectPath": "/Users/rufat/Projects/ServizzBackend/ServizzBackend/ServizzBackend.csproj",
+        "packagesPath": "/Users/rufat/.nuget/packages/",
+        "outputPath": "/Users/rufat/Projects/ServizzBackend/ServizzBackend/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/rufat/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Core": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
