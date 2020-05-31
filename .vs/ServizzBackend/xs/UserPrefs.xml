@@ -1,24 +1,44 @@
 ﻿<Properties StartupConfiguration="{2191DAF9-EA7B-4E91-9278-D62B543B823E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ServizzBackend/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ServizzBackend/Models/Structs/ServicesStruct.cs">
     <Files>
       <File FileName="ServizzBackend/Hubs/AppHub.cs" Line="12" Column="6" />
-      <File FileName="ServizzBackend/Startup.cs" Line="51" Column="48" />
+      <File FileName="ServizzBackend/Startup.cs" />
       <File FileName="ServizzBackend/appsettings.json" />
       <File FileName="ServizzBackend/appsettings.Development.json" />
       <File FileName="ServizzBackend/Program.cs" />
       <File FileName="ServizzBackend/WeatherForecast.cs" />
-      <File FileName="ServizzBackend/Properties/launchSettings.json" Line="27" Column="48" />
+      <File FileName="ServizzBackend/Properties/launchSettings.json" />
+      <File FileName="ServizzBackend/Controllers/Servizz.cs" Line="130" Column="19" />
+      <File FileName="ServizzBackend/Models/Structs/User.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Database/DbSelect.cs" Line="150" Column="1" />
+      <File FileName="ServizzBackend/Models/Structs/NewUser.cs" />
+      <File FileName="ServizzBackend/Models/Structs/Status.cs" />
+      <File FileName="ServizzBackend/Models/CommonScripts/Communications.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Database/DbInsert.cs" />
+      <File FileName="ServizzBackend/Models/Structs/City.cs" />
+      <File FileName="ServizzBackend/Models/Structs/ServicesStruct.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ServizzBackend" expanded="True">
             <Node name="ServizzBackend" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Hubs" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="CommonScripts" expanded="True" />
+                <Node name="MobileApp" expanded="True">
+                  <Node name="Database" expanded="True" />
+                </Node>
+                <Node name="Structs" expanded="True">
+                  <Node name="NewUser.cs" selected="True" />
+                </Node>
+              </Node>
               <Node name="Properties" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
