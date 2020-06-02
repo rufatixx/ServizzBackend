@@ -24,7 +24,7 @@ namespace ServizzBackend.Models.MobileApp.Database
 
         }
 
-        public List<UserStruct> LogIn(string mail, string password)
+        public List<UserStruct> LogIn(string phone, string key)
         {
 
 
@@ -140,7 +140,7 @@ namespace ServizzBackend.Models.MobileApp.Database
 
 
         }
-        public long getUserID(string login, string pass)
+        public long getUserID(string phone, string key)
         {
             long userID = 0;
 
@@ -157,8 +157,8 @@ namespace ServizzBackend.Models.MobileApp.Database
                     connection.Open();
 
                     using (MySqlCommand com = new MySqlCommand("select userID from user where email=@mail and passwd=SHA2(@pass,512) limit 1", connection)) {
-                        com.Parameters.AddWithValue("@mail", login);
-                        com.Parameters.AddWithValue("@pass", pass);
+                        com.Parameters.AddWithValue("@mail", phone);
+                        com.Parameters.AddWithValue("@pass", key);
                         MySqlDataReader reader = com.ExecuteReader();
                         if (reader.HasRows)
                         {

@@ -38,13 +38,13 @@ namespace ServizzBackend.Controllers
         [HttpPost]
         [Route("user/login")]
         
-        public ActionResult<List<User>> log_in(string mail, string pass)
+        public ActionResult<List<UserStruct>> log_in(string mail, string pass)
         {
             //var ipAddress = HttpContext.Connection.RemoteIpAddress;
 
             //communication.log($"mail -> {mail}\npass ->{security.sha256(pass)}", "log_in(string mail, string pass)", ipAddress.ToString());
 
-            List<User> user = new List<User>();
+            List<UserStruct> user = new List<UserStruct>();
             if (string.IsNullOrEmpty(mail) || string.IsNullOrEmpty(pass))
             {
 
@@ -64,7 +64,7 @@ namespace ServizzBackend.Controllers
         [HttpPost]
         [Route("user/signUp")]
       
-        public ActionResult<Status> signUp([FromBody] NewUser newUser)
+        public ActionResult<StatusStruct> signUp([FromBody] NewUserStruct newUser)
         {
 //            var ipAddress = HttpContext.Connection.RemoteIpAddress;
 
@@ -79,7 +79,7 @@ namespace ServizzBackend.Controllers
 //                                city ->{city}\n
 //                                profession ->{profession}
 //", "signUp(string mail, string name, string surname, string pass, string phone, string bDate, string gender, string country, string city, string profession)", ipAddress.ToString());
-            Status statusCode = new Status();
+            StatusStruct statusCode = new StatusStruct();
             if (!string.IsNullOrEmpty(newUser.email) &&
                 !string.IsNullOrEmpty(newUser.name) &&
                 !string.IsNullOrEmpty(newUser.surname) &&
@@ -107,12 +107,12 @@ namespace ServizzBackend.Controllers
         [HttpGet]
         [Route("get/cities")]
        
-        public ActionResult<List<City>> getCities(int countryId)
+        public ActionResult<List<CityStruct>> getCities(int countryId)
         {
             //var ipAddress = HttpContext.Connection.RemoteIpAddress;
 
             //communication.log($"countryID -> {countryId}", "getCities(int countryId)", ipAddress.ToString());
-            List<City> cities = new List<City>();
+            List<CityStruct> cities = new List<CityStruct>();
             DbSelect select = new DbSelect(Configuration, _hostingEnvironment);
             return select.getCities(countryId);
 
@@ -121,12 +121,12 @@ namespace ServizzBackend.Controllers
         [HttpGet]
         [Route("get/services")]
 
-        public ActionResult<List<City>> getServices(int countryId)
+        public ActionResult<List<CityStruct>> getServices(int countryId)
         {
             //var ipAddress = HttpContext.Connection.RemoteIpAddress;
 
             //communication.log($"countryID -> {countryId}", "getCities(int countryId)", ipAddress.ToString());
-            List<City> cities = new List<City>();
+            List<CityStruct> cities = new List<CityStruct>();
             DbSelect select = new DbSelect(Configuration, _hostingEnvironment);
             return select.getCities(countryId);
 
