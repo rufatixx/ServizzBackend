@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
 using ServizzBackend.Models.MobileApp.Structs;
 
 namespace ServizzBackend.Models.MobileApp.Database
@@ -18,35 +20,152 @@ namespace ServizzBackend.Models.MobileApp.Database
             _hostingEnvironment = hostingEnvironment;
 
         }
-        private String Encypherion1Generator(string phone,string key)
+        public string sha256(string randomString = "")
         {
-            var SecretKeyword1 = "myNewSecretKeywordForESMobileApplication1";
-            var Chyper = "";
-            var DT = (DateTime.Now).ToString("yyyy-MM-dd hh:mm:ss");
-            DbSelect select = new DbSelect(Configuration,_hostingEnvironment);
-          List<UserStruct> userData = select.LogIn(phone,key);
-           
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
+        public String userTokenGenerator(long userID)
+        {
+            var SecretKeyword1 = "myNewSecretKeywordForServizzApplication1";
+            var userToken = "";
+            var now = (DateTime.Now).ToString("yyyy-MM-dd hh:mm:ss");
+   
             
 
-            if (UserId > 0)
+            if (userID > 0)
             {
-                Chyper = GetMd5Hash(SecretKeyword1 + FIN + DT + UserId.ToString());
+                userToken = sha256(SecretKeyword1 + now + userID.ToString());
 
-                string query = "insert into esmobileapp.encryption_1 (USER_ID,USER_NAME,PASSWORD,DT,CHYPER) values (@userid,@username,@password,@dt,@chyper)";
+                string query = "update user set userToken =  @token where userID = @userID";
 
-                MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
+                using (MySqlConnection con = new MySqlConnection(ConnectionString)) {
+                    con.Open();
+                    using (MySqlCommand com = new MySqlCommand(query, con)) {
+                        com.Parameters.AddWithValue("userID", userID);
 
-                con.Open();
-                MySqlCommand ishqebul_insertcmd = new MySqlCommand(query, con);
-                ishqebul_insertcmd.Parameters.AddWithValue("userid", UserId);
-                ishqebul_insertcmd.Parameters.AddWithValue("username", UserData.EMAIL);
-                ishqebul_insertcmd.Parameters.AddWithValue("password", UserData.PASS);
-                ishqebul_insertcmd.Parameters.AddWithValue("dt", DT);
-                ishqebul_insertcmd.Parameters.AddWithValue("chyper", Chyper);
-                ishqebul_insertcmd.ExecuteNonQuery();
+                        com.Parameters.AddWithValue("token", userToken);
+                        com.ExecuteNonQuery();
+                    }
+                        
+                }
+
+                  
             }
 
-            return Chyper;
+            return userToken;
+        }
+        public string requestTokenGenerator(string userToken,long userID)
+        {
+           
+            var requestToken = "";
+            var now = (DateTime.Now).ToString("yyyy-MM-dd hh:mm:ss");
+
+           
+
+
+
+            if (userID > 0)
+            {
+               
+                requestToken = sha256(userToken + now + userID.ToString());
+
+                
+
+                using (MySqlConnection con = new MySqlConnection(ConnectionString)) {
+                    
+                    con.Open();
+                    string query = "update requesttoken set isactive=0 where userid=@userID order by ID desc limit 1;";
+                    using (MySqlCommand cmd = new MySqlCommand(@query, con))
+                    {
+
+                        cmd.Parameters.AddWithValue("userId", userID);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    query = "insert into requestToken (userID,token,isactive,cdate) values (@userID,@token,1,@now)";
+                    using (MySqlCommand com = new MySqlCommand(query, con))
+                    {
+                        com.Parameters.AddWithValue("userID", userID);
+
+                        com.Parameters.AddWithValue("now", now);
+                        com.Parameters.AddWithValue("token", requestToken);
+                        com.ExecuteNonQuery();
+                    }
+                   
+                }
+
+                   
+            }
+
+            return requestToken;
+        }
+        public int selectUserToken(string userToken) {
+
+
+            int userID = 0;
+
+            string query = "select userID from user where userToken = @token order by userID desc limit 1";
+
+            using (MySqlConnection con = new MySqlConnection(ConnectionString)) {
+                con.Open();
+                using (MySqlCommand cmd = new MySqlCommand(@query, con)) {
+
+                    cmd.Parameters.AddWithValue("token", userToken);
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+
+                        userID = Convert.ToInt32(dr[0]);
+                    }
+                }
+                    
+                con.Close();
+
+
+            }
+
+
+            return userID;
+        }
+        public int selectRequestToken(string requestToken)
+        {
+
+
+            int userID = 0;
+
+            string query = "select userID from requestToken where token = @token and isActive = 1 order by ID desc limit 1";
+
+            using (MySqlConnection con = new MySqlConnection(ConnectionString))
+            {
+                con.Open();
+                using (MySqlCommand cmd = new MySqlCommand(@query, con))
+                {
+
+                    cmd.Parameters.AddWithValue("token", requestToken);
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    
+                    while (dr.Read())
+                    {
+
+                        userID = Convert.ToInt32(dr[0]);
+
+                    }
+                }
+               
+                con.Close();
+
+
+            }
+
+
+            return userID;
         }
     }
 }
