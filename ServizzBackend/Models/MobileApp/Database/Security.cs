@@ -4,9 +4,9 @@ using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
-using ServizzBackend.Models.MobileApp.Structs;
+using WoozzyBackend.Models.MobileApp.Structs;
 
-namespace ServizzBackend.Models.MobileApp.Database
+namespace WoozzyBackend.Models.MobileApp.Database
 {
     public class Security
     {

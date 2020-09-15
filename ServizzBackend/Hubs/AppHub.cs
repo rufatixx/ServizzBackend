@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 
-namespace ServizzBackend.Hubs
+namespace WoozzyBackend.Hubs
 {
     public class AppHub : Hub
     {

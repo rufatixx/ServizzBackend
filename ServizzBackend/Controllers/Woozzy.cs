@@ -5,22 +5,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using ServizzBackend.Model.CommonScripts;
-using ServizzBackend.Models.MobileApp.Database;
-using ServizzBackend.Models.MobileApp.Structs;
+using WoozzyBackend.Model.CommonScripts;
+using WoozzyBackend.Models.MobileApp.Database;
+using WoozzyBackend.Models.MobileApp.Structs;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ServizzBackend.Controllers
+namespace WoozzyBackend.Controllers
 {
     [Route("api/[controller]")]
-    public class Servizz : Controller
+    public class Woozzy : Controller
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
         public IConfiguration Configuration;
         Communications communications;
-        public Servizz(IConfiguration configuration, IWebHostEnvironment hostingEnvironment)
+        public Woozzy(IConfiguration configuration, IWebHostEnvironment hostingEnvironment)
         {
             Configuration = configuration;
 
@@ -152,8 +152,8 @@ namespace ServizzBackend.Controllers
 
             
         }
-        [HttpGet]
-        [Route("get/services")]
+        [HttpPost]
+        [Route("get/user/services")]
 
         public  ResponseStruct<ServiceStruct> getServices(string userToken, string requestToken,string administrative_area_level_2)
         {

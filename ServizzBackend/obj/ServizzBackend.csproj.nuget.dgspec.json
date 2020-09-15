@@ -1,29 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rufat/Desktop/ServizzBackend/ServizzBackend/ServizzBackend.csproj": {}
+    "/Users/rufat/Documents/GitHub/ServizzBackend/ServizzBackend/ServizzBackend.csproj": {}
   },
   "projects": {
-    "/Users/rufat/Desktop/ServizzBackend/ServizzBackend/ServizzBackend.csproj": {
+    "/Users/rufat/Documents/GitHub/ServizzBackend/ServizzBackend/ServizzBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rufat/Desktop/ServizzBackend/ServizzBackend/ServizzBackend.csproj",
+        "projectUniqueName": "/Users/rufat/Documents/GitHub/ServizzBackend/ServizzBackend/ServizzBackend.csproj",
         "projectName": "ServizzBackend",
-        "projectPath": "/Users/rufat/Desktop/ServizzBackend/ServizzBackend/ServizzBackend.csproj",
+        "projectPath": "/Users/rufat/Documents/GitHub/ServizzBackend/ServizzBackend/ServizzBackend.csproj",
         "packagesPath": "/Users/rufat/.nuget/packages/",
-        "outputPath": "/Users/rufat/Desktop/ServizzBackend/ServizzBackend/obj/",
+        "outputPath": "/Users/rufat/Documents/GitHub/ServizzBackend/ServizzBackend/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/rufat/.config/NuGet/NuGet.Config"
+          "/Users/rufat/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "/Users/rufat/Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,59 @@
+﻿<Properties StartupConfiguration="{2191DAF9-EA7B-4E91-9278-D62B543B823E}|ServizzBackend">
+  <MonoDevelop.Ide.ItemProperties.WoozzyBackend PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ServizzBackend/Controllers/Woozzy.cs">
+    <Files>
+      <File FileName="ServizzBackend/Startup.cs" Line="43" Column="21" />
+      <File FileName="ServizzBackend/Models/MobileApp/Database/DbSelect.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Structs/NewUserStruct.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Structs/CityStruct.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Database/DbInsert.cs" />
+      <File FileName="ServizzBackend/appsettings.Development.json" />
+      <File FileName="ServizzBackend/appsettings.json" />
+      <File FileName="ServizzBackend/Properties/launchSettings.json" />
+      <File FileName="ServizzBackend/Program.cs" />
+      <File FileName="ServizzBackend/WeatherForecast.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Structs/VerifyStruct.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Structs/UserStruct.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Structs/ServiceStruct.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Structs/StatusStruct.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Structs/ResponseStruct.cs" />
+      <File FileName="ServizzBackend/Models/MobileApp/Database/Security.cs" />
+      <File FileName="ServizzBackend/Models/CommonScripts/Communications.cs" />
+      <File FileName="ServizzBackend/Hubs/AppHub.cs" />
+      <File FileName="ServizzBackend/Controllers/WeatherForecastController.cs" Line="8" Column="24" />
+      <File FileName="ServizzBackend/Controllers/Woozzy.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WoozzyBackend" expanded="True">
+            <Node name="WoozzyBackend" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="Woozzy.cs" selected="True" />
+              </Node>
+              <Node name="Hubs" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="CommonScripts" expanded="True" />
+                <Node name="MobileApp" expanded="True">
+                  <Node name="Database" expanded="True" />
+                  <Node name="Structs" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

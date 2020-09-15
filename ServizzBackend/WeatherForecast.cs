@@ -1,6 +1,6 @@
 using System;
 
-namespace ServizzBackend
+namespace WoozzyBackend
 {
     public class WeatherForecast
     {

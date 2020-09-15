@@ -10,8 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ServizzBackend.Hubs;
-namespace ServizzBackend
+using WoozzyBackend.Hubs;
+namespace WoozzyBackend
 {
     public class Startup
     {

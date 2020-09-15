@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 
 
-namespace ServizzBackend.Model.CommonScripts
+namespace WoozzyBackend.Model.CommonScripts
 {
     public class Communications
     {

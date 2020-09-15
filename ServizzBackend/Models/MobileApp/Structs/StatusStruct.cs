@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ServizzBackend.Models.MobileApp.Structs
+namespace WoozzyBackend.Models.MobileApp.Structs
 {
     public class StatusStruct
     {

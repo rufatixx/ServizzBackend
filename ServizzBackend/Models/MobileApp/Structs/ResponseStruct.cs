@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ServizzBackend.Models.MobileApp.Structs
+namespace WoozzyBackend.Models.MobileApp.Structs
 {
     public class ResponseStruct<T>
     {
